@@ -31,7 +31,7 @@ In this part of the project, you will develop code collaboratively with your tea
 
 For each feature, a template java file has been provided that you will be filling out with your team.
 
-Each feature can be divided evenly among your group and each member should create their own feature-item branch off of the feature branch. First, create the 3 FTR branches for FTR-pacman, FTR-ghost, and FTR-map. Then, each member of your team can create a feature-item branch off of each of the FTR branches created. (One member should create the 3 main FTR branches and push them to the repository before everyone begins working on their sections). For example, if you are working on the PacMan class and have chosen to work on the get_valid_moves function, you should make a branch _from_ FTR-pacman with the name pacman-get_valid_moves. 
+Each feature can be divided evenly among your group and each member should create their own feature-item branch off of the feature branch. First, create the 3 FTR branches for FTR-pacman, FTR-ghost, and FTR-map. Then, each member of your team can create a feature-item branch off of each of the FTR branches created. (One member should create the 3 main FTR branches and push them to the repository before everyone begins working on their sections). For example, if you are working on the PacMan class and have chosen to work on the get_valid_moves function, you should make a branch _from_ FTR-pacman with the name pacman-get_valid_moves.
 
 _By the end of this section, you should have 12 feature item branches and 3 feature branches with your code. You should also have a corresponding kanban board card for each feature-item branch (Totaling to 3 cards per member)._
 
@@ -184,6 +184,7 @@ The Map Class uses Java GUI to create the visual represenation of our game. For 
 
 - **Type**: `() -> JComponent`
 - **Description**: The method controls Pacman eating a cookie. When the function is able to successfully update display to eat a cookie it returns the Cookie component that has been eaten, otherwise it returns null.
+- **Test**: Written in `TestMapEatCookie.java`. The test first adds a Pacman and tries to call `eatCookie` on the map and Pacman. However, it will return `null` since there is no cookie at that location. The test then adds a cookie at the Pacman's location and calls `eatCookie` again. This time it will return the Cookie Component
 
 ```java
  //cookie NOT at location (4,6)
@@ -252,7 +253,7 @@ To make it easier, you may want to have each team member review only one other t
 
 For this section you will be creating your own project README with your group. Each member of the group is expected to contribute to the README for the functions they were responsible for. All work for the README must be done on Github. We will be looking at who contributed to the README file for the purpose of grading, and will only consider contributions made to the file.
 
-**DO NOT USE GOOGLE DOCS TO CREATE THIS README**. We have had to deduct points for this in the past, please do not do this. 
+**DO NOT USE GOOGLE DOCS TO CREATE THIS README**. We have had to deduct points for this in the past, please do not do this.
 
 Your README MUST have
 
