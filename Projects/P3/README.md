@@ -31,7 +31,7 @@ In this part of the project, you will develop code collaboratively with your tea
 
 For each feature, a template java file has been provided that you will be filling out with your team.
 
-Each feature can be divided evenly among your group and each member should create their own feature-item branch off of the feature branch. First, create the 3 FTR branches for FTR-pacman, FTR-ghost, and FTR-map. Then, each member of your team can create a feature-item branch off of each of the FTR branches created. (One member should create the 3 main FTR branches and push them to the repository before everyone begins working on their sections). For example, if you are working on the PacMan class and have chosen to work on the get_valid_moves function, you should make a branch _from_ FTR-pacman with the name pacman-get_valid_moves. 
+Each feature can be divided evenly among your group and each member should create their own feature-item branch off of the feature branch. First, create the 3 FTR branches for FTR-pacman, FTR-ghost, and FTR-map. Then, each member of your team can create a feature-item branch off of each of the FTR branches created. (One member should create the 3 main FTR branches and push them to the repository before everyone begins working on their sections). For example, if you are working on the PacMan class and have chosen to work on the get_valid_moves function, you should make a branch _from_ FTR-pacman with the name pacman-get_valid_moves.
 
 _By the end of this section, you should have 12 feature item branches and 3 feature branches with your code. You should also have a corresponding kanban board card for each feature-item branch (Totaling to 3 cards per member)._
 
@@ -125,6 +125,7 @@ In this section, you must create a class for the ghosts that are moving around t
 
 - **Type**: `() -> Bool`
 - **Description**: This function checks its surroundings to see if PacMan is in attack range. The attack radius of a ghost is 1 which means that a ghost at location <img src="https://render.githubusercontent.com/render/math?math=(x, y)"> can attack PacMan as long as PacMan is located at <img src="https://render.githubusercontent.com/render/math?math=(x \pm 1, y \pm 1)">. If PacMan is in the attack range, this function returns true otherwise it returns false.
+- **Tests**: Written in `TestPacManInRange.java`. The test places a Pacman at `(2,2)` and a Ghost at `(2, 1)`, then calls `is_pacman_in_range()` on this ghost, which is expected to return true. The test then places another Ghost at `(2, 2)`, then calls `is_pacman_in_range()` on this second ghost, which is expected to return false.
 
 - **Examples**:
   ```java
@@ -252,7 +253,7 @@ To make it easier, you may want to have each team member review only one other t
 
 For this section you will be creating your own project README with your group. Each member of the group is expected to contribute to the README for the functions they were responsible for. All work for the README must be done on Github. We will be looking at who contributed to the README file for the purpose of grading, and will only consider contributions made to the file.
 
-**DO NOT USE GOOGLE DOCS TO CREATE THIS README**. We have had to deduct points for this in the past, please do not do this. 
+**DO NOT USE GOOGLE DOCS TO CREATE THIS README**. We have had to deduct points for this in the past, please do not do this.
 
 Your README MUST have
 
