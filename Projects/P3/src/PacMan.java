@@ -14,8 +14,18 @@ public class PacMan{
 		this.myMap = map;
 	}
 
+	private int[][] directions = {{1,0}, {0,1}, {-1,0}, {0,-1}};
 	public ArrayList<Location> get_valid_moves() {
-		return null;	
+		ArrayList<Location> validMoves = new ArrayList<>();
+		for(int[] dir : directions) {
+			Location shiftedLoc = this.myLoc.shift(dir[0], dir[1]);
+			HashSet<Map.Type> newLocation = this.myMap.getLoc(shiftedLoc);
+			
+			if(newLocation.contains(Map.Type.EMPTY) | newLocation.contains(Map.Type.COOKIE)) {
+				validMoves.add(shiftedLoc);
+			}
+		}
+		return validMoves;
 	}
 
 	public boolean move() {
