@@ -79,7 +79,6 @@ public class Map{
 			}
 		}
 
-		//update gameOver
 		return false;
 	}
 	
