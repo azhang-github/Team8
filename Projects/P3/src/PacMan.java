@@ -22,7 +22,15 @@ public class PacMan{
 		return false;
 	}
 
-	public boolean is_ghost_in_range() { 
+	public boolean is_ghost_in_range() {
+		int[][] xy = { {1, 0}, {-1, 0}, {0, 1}, {0, -1} };
+
+		for (int[] p : xy) {
+			Location loc = new Location(myLoc.x + p[0], myLoc.y + p[1]);
+			if (myMap.getLoc(loc).contains(Map.Type.GHOST))
+				return true;
+		}
+
 		return false;
 	}
 
