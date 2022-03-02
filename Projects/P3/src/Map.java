@@ -64,6 +64,21 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
+		int[][] xy = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+		Location loc = locations.get(Name);
+
+		for (int[] p : xy) {
+			Location pacLoc = new Location(loc.x + p[0], loc.y + p[1]);
+
+			if (getLoc(pacLoc).contains(Map.Type.PACMAN)) {
+				components.remove("pacman");
+				locations.put(Name, pacLoc);
+				field.remove(pacLoc);
+
+				return gameOver = true;
+			}
+		}
+
 		//update gameOver
 		return false;
 	}
