@@ -79,6 +79,7 @@ public class Map{
       this.cookies--;
       return this.components.remove(cookieName);
     }
+
 		return null;
 	}
 }
