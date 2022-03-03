@@ -21,22 +21,22 @@ public class Ghost{
 	}
 
 	public boolean is_pacman_in_range() {
-    HashSet<Location> locationSet = new HashSet<>();
-    Location up = new Location(this.myLoc.x, this.myLoc.y + 1);
-    locationSet.add(up);
-    Location down = new Location(this.myLoc.x, this.myLoc.y - 1);
-    locationSet.add(down);
-    Location right = new Location(this.myLoc.x + 1, this.myLoc.y);
-    locationSet.add(right);
-    Location left = new Location(this.myLoc.x - 1, this.myLoc.y);
-    locationSet.add(left);
+	    HashSet<Location> locationSet = new HashSet<>();
+	    Location up = new Location(this.myLoc.x, this.myLoc.y + 1);
+	    locationSet.add(up);
+	    Location down = new Location(this.myLoc.x, this.myLoc.y - 1);
+	    locationSet.add(down);
+	    Location right = new Location(this.myLoc.x + 1, this.myLoc.y);
+	    locationSet.add(right);
+	    Location left = new Location(this.myLoc.x - 1, this.myLoc.y);
+	    locationSet.add(left);
 
-    for (Location location : locationSet) {
-      if (this.myMap.getLoc(location).contains(Map.Type.PACMAN)) {
-        return true;
-      }
-    }
-    return false;
+	    for (Location location : locationSet) {
+	      if (this.myMap.getLoc(location).contains(Map.Type.PACMAN)) {
+		return true;
+	      }
+	    }
+	    return false;
 	}
 
 	public boolean attack() {
