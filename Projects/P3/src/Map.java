@@ -64,7 +64,28 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
+		int[][] xy = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+		Location loc = locations.get(Name);
+
+		for (int[] p : xy) {
+			Location pacLoc = new Location(loc.x + p[0], loc.y + p[1]);
+
+			if (getLoc(pacLoc).contains(Type.PACMAN)) {
+				/* remove pacman */
+				components.remove("pacman");
+				locations.remove("pacman");
+
+				/* update location */
+				locations.put(Name, pacLoc);
+
+				/* update field */
+				field.get(pacLoc).remove(Type.PACMAN);
+				field.get(pacLoc).add(Type.GHOST);
+
+				return gameOver = true;
+			}
+		}
+
 		return false;
 	}
 
