@@ -5,6 +5,7 @@ public class Ghost{
 	String myName;
 	Location myLoc;
 	Map myMap;
+	Location shift;
 
 	public Ghost(String name, Location loc, Map map) {
 		this.myLoc = loc;
@@ -31,7 +32,13 @@ public class Ghost{
 	}
 
 	public boolean move() {
-		return false;
+		ArrayList<Location> moves = this.get_valid_moves();
+		int idx = (int) (Math.random() * moves.size());  
+		if (moves.size() == 0 || !this.myMap.move(this.myName, moves.get(idx), Map.Type.GHOST))
+			return false;	
+		this.shift = this.myLoc.unshift(moves.get(idx));
+		this.myLoc = moves.get(idx);  
+		return true;
 	}
 
 	public boolean is_pacman_in_range() {
