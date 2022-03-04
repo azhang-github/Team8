@@ -185,6 +185,7 @@ The Map Class uses Java GUI to create the visual represenation of our game. For 
 
 - **Type**: `() -> JComponent`
 - **Description**: The method controls Pacman eating a cookie. When the function is able to successfully update display to eat a cookie it returns the Cookie component that has been eaten, otherwise it returns null.
+- **Test**: Written in `TestMapEatCookie.java`. The test first adds a Pacman and tries to call `eatCookie` on the map and Pacman. However, it will return `null` since there is no cookie at that location. The test then adds a cookie at the Pacman's location and calls `eatCookie` again. This time it will return the Cookie Component
 
 ```java
  //cookie NOT at location (4,6)
