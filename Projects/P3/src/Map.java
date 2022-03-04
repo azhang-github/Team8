@@ -70,10 +70,17 @@ public class Map{
 		for (int[] p : xy) {
 			Location pacLoc = new Location(loc.x + p[0], loc.y + p[1]);
 
-			if (getLoc(pacLoc).contains(Map.Type.PACMAN)) {
+			if (getLoc(pacLoc).contains(Type.PACMAN)) {
+				/* remove pacman */
 				components.remove("pacman");
+				locations.remove("pacman");
+
+				/* update location */
 				locations.put(Name, pacLoc);
-				field.remove(pacLoc);
+
+				/* update field */
+				field.get(pacLoc).remove(Type.PACMAN);
+				field.get(pacLoc).add(Type.GHOST);
 
 				return gameOver = true;
 			}
