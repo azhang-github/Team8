@@ -7,6 +7,8 @@ Put image here.
 
 ## How To Run
 
+Put how to run here.
+
 ## Part 1a: PacMan Class
 
 ### get_valid_moves()
@@ -31,8 +33,6 @@ Put image here.
 
 ## Part 1b: Ghost Class
 
-In this section, you must create a class for the ghosts that are moving around the map. The class and constructor are given to you in the Ghost.java file. Each team member should choose one of the following functions to complete and create a feature-item branch off of the FTR-ghost feature branch.
-
 ### get_valid_moves()
 
 - **Implementation**:
@@ -54,8 +54,6 @@ In this section, you must create a class for the ghosts that are moving around t
 - **Test**:
 
 ## Map Class
-
-The Map Class uses Java GUI to create the visual represenation of our game. For this project, we have given you most the code for the GUI with the exception of 4 methods which you will have to write. The goal of this section is to develop the interaction between pacman and walls and cookies as well as attacking ghosts.
 
 ### move(String name, Location loc, Type type)
 
