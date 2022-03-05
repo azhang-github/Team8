@@ -75,8 +75,8 @@ java -cp "src/" StartMenu
 
 ### attack(String name)
 
-- **Implementation**: This function updates the display and set appropriate game
-                      status when an attack of a ghost with the given name against
+- **Implementation**: This function updates the display and sets appropriate game
+                      states when an attack of a ghost with the given name against
                       a pacman is successful, otherwise it returns false.
 
 - **Test**: We iterate over all possible valid locations of which a ghost may attack 
