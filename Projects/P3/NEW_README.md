@@ -59,7 +59,7 @@ java -cp "src/" StartMenu
                       `is_pacman_in_range()` evaluates to true, otherwise it does
                       nothing and returns false.
 - **Test**: We iterate over all possible valid and invalid locations of which a ghost may
-            attack a pacman from and appy this method by manually initializing a map.
+            attack a pacman from to test this method.
 
 ## Map Class
 
@@ -75,14 +75,13 @@ java -cp "src/" StartMenu
 
 ### attack(String name)
 
-- **Implementation**: This function updates the display and set appropriate game
-                      status when an attack of a ghost with the given name against
+- **Implementation**: This function updates the display and sets appropriate game
+                      states when an attack of a ghost with the given name against
                       a pacman is successful, otherwise it returns false.
-
 - **Test**: We iterate over all possible valid locations of which a ghost may attack
-            a pacman from and appy this method by manually initializing a map. Only valid
-            locations are tested because it is only going to be called when an attack
-            target is in range (i.e. from `Ghost->attack`).
+            a pacman from to test this method. Only valid locations are tested because
+            it is only going to be called when an attack target is in range (i.e. from
+            `Ghost->attack`).
 
 ### eatCookie(String Name)
 
