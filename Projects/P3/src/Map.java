@@ -104,7 +104,7 @@ public class Map{
       String cookieName = "tok_x" + pacmanLocation.x + "_y" + pacmanLocation.y;
       this.locations.remove(cookieName);
       this.field.get(pacmanLocation).remove(Map.Type.COOKIE);
-      this.cookies--;
+      this.cookies++;
       return this.components.remove(cookieName);
     }
 
