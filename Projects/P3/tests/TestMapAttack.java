@@ -13,7 +13,7 @@ public class TestMapAttack {
 
 			map.add("pacman", new Location(3, 3), null, Map.Type.PACMAN);
 			map.add("G", new Location(r[0], r[1]), null, Map.Type.GHOST);
-			assertTrue(map.attack("G"));
+			Assert.assertTrue(map.attack("G"));
 		}
 	}
 }
