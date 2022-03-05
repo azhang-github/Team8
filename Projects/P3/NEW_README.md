@@ -1,5 +1,5 @@
 # Project 1: PacMan
-By Michael Li, Jason Lavis, Chiayo Lin, 
+By Michael Li, Jason Lavis, Chiayo Lin
 
 ## Image
 
@@ -30,8 +30,8 @@ java -cp "src/" StartMenu
 
 ### consume()
 
-- **Implementation**:
-- **Test**:
+- **Implementation**: First get the set of components at the pacman's location. If the location contains a cookie, call `map.eatCookie` with the pacman's name as a parameter. Otherwise, return null.
+- **Test**:  Written in `TestConsume.java`. The test first adds a Pacman and tries to call `consume` on the Pacman. However, it will return `null` since there is no cookie at that location. The test then adds a cookie at the Pacman's location and calls `consume` again. This time it will return the Cookie Component
 
 ## Part 1b: Ghost Class
 
@@ -47,8 +47,8 @@ java -cp "src/" StartMenu
 
 ### is_pacman_in_range()
 
-- **Implementation**:
-- **Test**:
+- **Implementation**: Create a hashset of locations to test: `(x+1, y), (x-1, y), (x, y+1), (x, y-1)`. For each location, check if the pacman is at that location. If so then return true. Else return false.
+- **Tests**: Written in `TestPacManInRange.java`. The test places a Pacman at `(2,2)` and a Ghost at `(2, 1)`, then calls `is_pacman_in_range()` on this ghost, which is expected to return true. The test then places another Ghost at `(2, 2)`, then calls `is_pacman_in_range()` on this second ghost, which is expected to return false.
 
 ### attack()
 
@@ -74,5 +74,5 @@ java -cp "src/" StartMenu
 
 ### eatCookie(String Name)
 
-- **Implementation**:
-- **Test**:
+- **Implementation**: First get the location of pacman's name. If the location contains a cookie, remove the cookie from the location, field, and components, increment `cookies`, and return the cookie component. Otherwise return null.
+- **Test**: Written in `TestMapEatCookie.java`. The test first adds a Pacman and tries to call `eatCookie` on the map and Pacman. However, it will return `null` since there is no cookie at that location. The test then adds a cookie at the Pacman's location and calls `eatCookie` again. This time it will return the Cookie Component
