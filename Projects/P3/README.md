@@ -125,6 +125,7 @@ In this section, you must create a class for the ghosts that are moving around t
 
 - **Type**: `() -> Bool`
 - **Description**: This function checks its surroundings to see if PacMan is in attack range. The attack radius of a ghost is 1 which means that a ghost at location <img src="https://render.githubusercontent.com/render/math?math=(x, y)"> can attack PacMan as long as PacMan is located at <img src="https://render.githubusercontent.com/render/math?math=(x \pm 1, y \pm 1)">. If PacMan is in the attack range, this function returns true otherwise it returns false.
+- **Tests**: Written in `TestPacManInRange.java`. The test places a Pacman at `(2,2)` and a Ghost at `(2, 1)`, then calls `is_pacman_in_range()` on this ghost, which is expected to return true. The test then places another Ghost at `(2, 2)`, then calls `is_pacman_in_range()` on this second ghost, which is expected to return false.
 
 - **Examples**:
   ```java
