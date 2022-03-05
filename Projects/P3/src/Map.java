@@ -55,10 +55,10 @@ public class Map{
 	public boolean move(String name, Location loc, Type type) {
 		Location old = locations.get(name);
 		JComponent comp = components.get(name);
-		
+
 		locations.put(name, loc);
 		comp.setLocation(loc.x, loc.y);
-		
+
 		field.get(old).remove(type);
 		if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
 		field.get(loc).add(type);
@@ -104,6 +104,7 @@ public class Map{
       String cookieName = "tok_x" + pacmanLocation.x + "_y" + pacmanLocation.y;
       this.locations.remove(cookieName);
       this.field.get(pacmanLocation).remove(Map.Type.COOKIE);
+      field.get(pacmanLocation).add(Type.EMPTY);
       this.cookies++;
       return this.components.remove(cookieName);
     }
