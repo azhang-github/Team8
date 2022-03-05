@@ -14,19 +14,19 @@ public class TestAttack extends TestCase {
 
 			map.add("P", new Location(3, 3), null, Map.Type.PACMAN);
 			map.add("G", new Location(r[0], r[1]), null, Map.Type.GHOST);
-			assertTrue(ghost.attack());
+			Assert.assertTrue(ghost.attack());
 		}
 
 		/* not in range */
-		int[][] notInRange = {{2, 2}, {3, 3}, {2, 4}, {4, 2}, {0, 0}, {4, 4}};
-		for (int[] r : inRange) {
-			Map map = new Map(5);
+		int[][] notInRange = {{2, 2}, {2, 4}, {4, 2}, {0, 0}, {4, 4}};
+		Map map = new Map(5);
+		PacMan pacman = new PacMan("P", new Location(3, 3), map);
+		for (int[] r : notInRange) {
 			Ghost ghost = new Ghost("G", new Location(r[0], r[1]), map);
-			PacMan pacman = new PacMan("P", new Location(3, 3), map);
 
 			map.add("P", new Location(3, 3), null, Map.Type.PACMAN);
 			map.add("G", new Location(r[0], r[1]), null, Map.Type.GHOST);
-			assertFalse(ghost.attack());
+			Assert.assertFalse(ghost.attack());
 		}
 	}
 }
