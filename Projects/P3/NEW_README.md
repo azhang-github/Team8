@@ -3,7 +3,7 @@ By Michael Li, Jason Lavis, Chiayo Lin
 
 ## Image
 
-Put image here.
+![Pacman Game](./screenshot.png)
 
 ## How To Run
 ```
@@ -30,7 +30,7 @@ java -cp "src/" StartMenu
 - **Test**: We test this method by iterating over a list of locations including
             both in-the-range and out-of-the-range locations to validate this
             method's ability to detect a ghost within its detection range.
-            
+
 ### consume()
 
 - **Implementation**: First get the set of components at the pacman's location. If the location contains a cookie, call `map.eatCookie` with the pacman's name as a parameter. Otherwise, return null.
@@ -79,7 +79,7 @@ java -cp "src/" StartMenu
                       status when an attack of a ghost with the given name against
                       a pacman is successful, otherwise it returns false.
 
-- **Test**: We iterate over all possible valid locations of which a ghost may attack 
+- **Test**: We iterate over all possible valid locations of which a ghost may attack
             a pacman from and appy this method by manually initializing a map. Only valid
             locations are tested because it is only going to be called when an attack
             target is in range (i.e. from `Ghost->attack`).
