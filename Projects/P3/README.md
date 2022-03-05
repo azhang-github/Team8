@@ -20,8 +20,8 @@ java -cp "src/" StartMenu
 
 ### move()
 
-- **Implementation**:
-- **Test**:
+- **Implementation**: Sagar implemented this for us
+- **Test**: Sagar implemented this for us
 
 ### is_ghost_in_range()
 
@@ -45,13 +45,13 @@ java -cp "src/" StartMenu
 
 ### move()
 
-- **Implementation**:
-- **Test**:
+- **Implementation**: Sagar implemented this for us
+- **Test**: Sagar implemented this for us
 
 ### is_pacman_in_range()
 
 - **Implementation**: Create a hashset of locations to test: `(x+1, y), (x-1, y), (x, y+1), (x, y-1)`. For each location, check if the pacman is at that location. If so then return true. Else return false.
-- **Tests**: Written in `TestPacManInRange.java`. The test places a Pacman at `(2,2)` and a Ghost at `(2, 1)`, then calls `is_pacman_in_range()` on this ghost, which is expected to return true. The test then places another Ghost at `(2, 2)`, then calls `is_pacman_in_range()` on this second ghost, which is expected to return false.
+- **Tests**: Written in `TestPacManInRange.java`. The test places a Pacman at `(2,2)` and a Ghost at `(2, 1)`, then calls `is_pacman_in_range()` on this ghost, which is expected to return true. The test then places another Ghost at `(4, 4)`, then calls `is_pacman_in_range()` on this second ghost, which is expected to return false.
 
 ### attack()
 
@@ -65,8 +65,8 @@ java -cp "src/" StartMenu
 
 ### move(String name, Location loc, Type type)
 
-- **Implementation**:
-- **Test**:
+- **Implementation**: Sagar implemented this for us
+- **Test**: Sagar implemented this for us
 
 ### getLoc(Location loc)
 
@@ -85,5 +85,5 @@ java -cp "src/" StartMenu
 
 ### eatCookie(String Name)
 
-- **Implementation**: First get the location of pacman's name. If the location contains a cookie, remove the cookie from the location, field, and components, increment `cookies`, and return the cookie component. Otherwise return null.
+- **Implementation**: First get the location of pacman's name. If the location contains a cookie, remove the cookie from the location, field, and components, increment `cookies`, add `Type.EMPTY` to the field at that location, and return the cookie component. Otherwise return null.
 - **Test**: Written in `TestMapEatCookie.java`. The test first adds a Pacman and tries to call `eatCookie` on the map and Pacman. However, it will return `null` since there is no cookie at that location. The test then adds a cookie at the Pacman's location and calls `eatCookie` again. This time it will return the Cookie Component
