@@ -25,9 +25,12 @@ java -cp "src/" StartMenu
 
 ### is_ghost_in_range()
 
-- **Implementation**:
-- **Test**:
-
+- **Implementation**: This method returns true if there are any ghosts in a
+                      attack range of radius 1, otherwise it returns false.
+- **Test**: We test this method by iterating over a list of locations including
+            both in-the-range and out-of-the-range locations to validate this
+            method's ability to detect a ghost within its detection range.
+            
 ### consume()
 
 - **Implementation**:
@@ -52,8 +55,11 @@ java -cp "src/" StartMenu
 
 ### attack()
 
-- **Implementation**:
-- **Test**:
+- **Implementation**: This method invokes `Map->attack(Name)` instance method if
+                      `is_pacman_in_range()` evaluates to true, otherwise it does
+                      nothing and returns false.
+- **Test**: We iterate over all possible valid and invalid locations of which a ghost may
+            attack a pacman from and appy this method by manually initializing a map.
 
 ## Map Class
 
@@ -69,8 +75,14 @@ java -cp "src/" StartMenu
 
 ### attack(String name)
 
-- **Implementation**:
-- **Test**:
+- **Implementation**: This function updates the display and set appropriate game
+                      status when an attack of a ghost with the given name against
+                      a pacman is successful, otherwise it returns false.
+
+- **Test**: We iterate over all possible valid locations of which a ghost may attack 
+            a pacman from and appy this method by manually initializing a map. Only valid
+            locations are tested because it is only going to be called when an attack
+            target is in range (i.e. from `Ghost.attack`).
 
 ### eatCookie(String Name)
 
