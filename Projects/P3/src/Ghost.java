@@ -16,13 +16,13 @@ public class Ghost{
 	private int[][] directions = {{1,0}, {0,1}, {-1,0}, {0,-1}};
 	public ArrayList<Location> get_valid_moves() {
 		ArrayList<Location> validMoves = new ArrayList<>();
-		
+
 		for(int[] dir : directions) {
 			Location shiftedLocation = this.myLoc.shift(dir[0], dir[1]);
 			HashSet<Map.Type> newLocation = this.myMap.getLoc(shiftedLocation);
 
-			if(newLocation.contains(Map.Type.EMPTY) 
-			| newLocation.contains(Map.Type.COOKIE) 
+			if(newLocation.contains(Map.Type.EMPTY)
+			| newLocation.contains(Map.Type.COOKIE)
 			| newLocation.contains(Map.Type.PACMAN)
 			| newLocation.contains(Map.Type.GHOST)) {
 				validMoves.add(shiftedLocation);
@@ -33,11 +33,11 @@ public class Ghost{
 
 	public boolean move() {
 		ArrayList<Location> moves = this.get_valid_moves();
-		int idx = (int) (Math.random() * moves.size());  
+		int idx = (int) (Math.random() * moves.size());
 		if (moves.size() == 0 || !this.myMap.move(this.myName, moves.get(idx), Map.Type.GHOST))
-			return false;	
+			return false;
 		this.shift = this.myLoc.unshift(moves.get(idx));
-		this.myLoc = moves.get(idx);  
+		this.myLoc = moves.get(idx);
 		return true;
 	}
 
