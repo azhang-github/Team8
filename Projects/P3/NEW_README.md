@@ -82,7 +82,7 @@ java -cp "src/" StartMenu
 - **Test**: We iterate over all possible valid locations of which a ghost may attack 
             a pacman from and appy this method by manually initializing a map. Only valid
             locations are tested because it is only going to be called when an attack
-            target is in range (i.e. from `Ghost.attack`).
+            target is in range (i.e. from `Ghost->attack`).
 
 ### eatCookie(String Name)
 
