@@ -9,6 +9,7 @@ public class TestMapAttack extends TestCase {
 
 		for (int[] r : inRange) {
 			Map map = new Map(10);
+
 			PacMan pacman = new PacMan("pacman", new Location(3, 3), map);
 			map.add("pacman", new Location(3, 3), null, Map.Type.PACMAN);
 
@@ -17,5 +18,16 @@ public class TestMapAttack extends TestCase {
 
 			Assert.assertTrue(map.attack("G" + r[0] + r[1]));
 		}
+
+		/* out of range */
+		Map map = new Map(10);
+
+		PacMan pacman = new PacMan("pacman", new Location(3, 3), map);
+		map.add("pacman", new Location(3, 3), null, Map.Type.PACMAN);
+
+		Ghost ghost = new Ghost("G", new Location(2, 2), map);
+		map.add("G", new Location(2, 2), null, Map.Type.GHOST);
+
+		Assert.assertFalse(map.attack("G"));
 	}
 }
