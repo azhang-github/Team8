@@ -87,6 +87,7 @@ Make sure to run these commands from inside the P1 directory
 
 - **Type**: `() -> JComponent`
 - **Description**: This method checks to see if there is a 'power-cookie' located in Pacman's current <img src="https://render.githubusercontent.com/render/math?math=(x, y)"> coordinate. If there is, this method calls the eatCookie method from the Map Class, and returns the cookie component if the cookie a consumed, and null otherwise.
+- **Test**:  Written in `TestConsume.java`. The test first adds a Pacman and tries to call `consume` on the Pacman. However, it will return `null` since there is no cookie at that location. The test then adds a cookie at the Pacman's location and calls `consume` again. This time it will return the Cookie Component
 - **Examples**:
 
 ```java
