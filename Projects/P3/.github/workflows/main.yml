@@ -46,3 +46,14 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
+  build:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile and run Ghost/Map attack and is_ghost_in_range tests
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
+          java  -cp "tests/junit-4.10.jar:src/:tests/" \
+                org.junit.runner.JUnitCore             \
+                TestAttack TestMapAttack TestGhostInRange
