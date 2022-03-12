@@ -7,7 +7,7 @@ import java.util.HashSet;
 public class TestGhostValidMoves extends TestCase {
 
 	public void testGhostValidMoves() throws FileNotFoundException{
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		Map map = frame.getMap();
 		Ghost ghost = new Ghost("ghost", new Location(1, 1), map);
 

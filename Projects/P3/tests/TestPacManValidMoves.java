@@ -10,14 +10,7 @@ import static org.junit.Assert.assertFalse;
 public class TestPacManValidMoves extends TestCase {
 
 	public void testPacManValidMoves() throws FileNotFoundException{
-		/*
-		WWWWW
-		WCPGW
-		WEEEW
-		WEEEW
-		WWWWW
-		*/
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		Map map = frame.getMap();
 		PacMan pacman = new PacMan("pacman", new Location(1, 1), map);
 		
