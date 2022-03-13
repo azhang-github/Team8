@@ -3,7 +3,20 @@
 name: CI
 
 # Controls when the workflow will run
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+    paths:
+      - 'Projects/P3/**'
+  pull_request:
+    paths:
+      - 'Projects/P3/**'
+  workflow_dispatch:
+    paths:
+      - 'Projects/P3/**'
+
+defaults:
+  run:
+    working-directory: Projects/P3/
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -19,7 +32,8 @@ jobs:
       - name: Compile src files
         run: |
           javac -cp "src/" src/*.java
-  build:
+
+  consume:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
@@ -28,7 +42,8 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
-  build:
+
+  eatcookie:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
@@ -37,7 +52,8 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
-  build:
+
+  pacmanrange:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
@@ -46,7 +62,8 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManInRange
-  build:
+
+  ghostmapattack:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
@@ -57,7 +74,8 @@ jobs:
           java  -cp "tests/junit-4.10.jar:src/:tests/" \
                 org.junit.runner.JUnitCore             \
                 TestAttack TestMapAttack TestGhostInRange
-  build:
+
+  getloc:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
@@ -66,7 +84,8 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
-  build:
+
+  pacmanmoves:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
@@ -75,7 +94,8 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
-  build:
+
+  ghostmoves:
     runs-on: ubuntu-latest
     container: openjdk
     steps:
