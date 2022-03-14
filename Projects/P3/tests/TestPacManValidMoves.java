@@ -2,6 +2,7 @@ import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 
 import org.junit.Test;
@@ -26,7 +27,7 @@ public class TestPacManValidMoves extends TestCase {
 		for(int[] dir : directions) {
 			Location possibleLoc = pacman.myLoc.shift(dir[0], dir[1]);
 			if(!validMoves.contains(possibleLoc)) {
-				HashSet<Map.Type> types = map.getLoc(possibleLoc);
+				HashSet<Map.Type> types = new HashSet<>(Arrays.asList(Map.Type.EMPTY));
 				assertFalse(types.contains(Map.Type.EMPTY) || types.contains(Map.Type.COOKIE) || types.contains(Map.Type.GHOST));
 			}
 		}

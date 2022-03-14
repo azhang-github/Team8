@@ -13,7 +13,7 @@ public class TestMapGetLoc {
 		map.add("Pacman", new Location(1, 0), null, Map.Type.PACMAN);
 		map.add("Wall", new Location(1, 2), null, Map.Type.WALL);
 		map.add("Cookie", new Location(2, 2), null, Map.Type.COOKIE);
-		assertTrue(map.getLoc(new Location(0, 0)).contains(Map.Type.GHOST));
+		assertTrue(map.getLoc(new Location(0, 1)).contains(Map.Type.GHOST));
 		assertTrue(map.getLoc(new Location(0, 1)).contains(Map.Type.EMPTY));
 		assertTrue(map.getLoc(new Location(1, 0)).contains(Map.Type.PACMAN));
 		assertTrue(map.getLoc(new Location(1, 2)).contains(Map.Type.WALL));
