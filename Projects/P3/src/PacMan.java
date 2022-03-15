@@ -47,9 +47,9 @@ public class PacMan{
 		for (int[] p : xy) {
 			Location loc = new Location(myLoc.x + p[0], myLoc.y + p[1]);
 			if (myMap.getLoc(loc).contains(Map.Type.GHOST))
-				return true;
+				return false;
 		}
-		return false;
+		return true;
 	}
 
 	public JComponent consume() {
