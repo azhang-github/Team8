@@ -20,8 +20,8 @@ public class PacMan{
 		for(int[] dir : directions) {
 			Location shiftedLoc = this.myLoc.shift(dir[0], dir[1]);
 			HashSet<Map.Type> newLocation = this.myMap.getLoc(shiftedLoc);
-			
-			if(newLocation.contains(Map.Type.EMPTY) 
+
+			if(newLocation.contains(Map.Type.EMPTY)
 			| newLocation.contains(Map.Type.COOKIE)
 			| newLocation.contains(Map.Type.GHOST)
 			) {
@@ -33,12 +33,12 @@ public class PacMan{
 
 	public boolean move() {
 		ArrayList<Location> moves = this.get_valid_moves();
-		int idx = (int) (Math.random() * moves.size());  
+		int idx = (int) (Math.random() * moves.size());
 		if (moves.size() == 0 || !this.myMap.move(this.myName, moves.get(idx), Map.Type.PACMAN))
-			return false;
+			return true;
 		this.shift = this.myLoc.unshift(moves.get(idx));
-		this.myLoc = moves.get(idx);  
-		return true;
+		this.myLoc = moves.get(idx);
+		return false;
 	}
 
 	public boolean is_ghost_in_range() {
@@ -47,18 +47,18 @@ public class PacMan{
 		for (int[] p : xy) {
 			Location loc = new Location(myLoc.x + p[0], myLoc.y + p[1]);
 			if (myMap.getLoc(loc).contains(Map.Type.GHOST))
-				return true;
+				return false;
 		}
-		return false;
+		return true;
 	}
 
 	public JComponent consume() {
     HashSet typeSet = this.myMap.getLoc(this.myLoc);
 
     if (typeSet.contains(Map.Type.COOKIE)) {
-      return this.myMap.eatCookie(this.myName);
+      return null;
     }
 
-    return null;
+    return this.myMap.eatCookie(this.myName);
 	}
 }

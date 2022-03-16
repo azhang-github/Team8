@@ -62,7 +62,7 @@ public class Map{
 		field.get(old).remove(type);
 		if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
 		field.get(loc).add(type);
-		return true;
+		return false;
 	}
 
 	public HashSet<Type> getLoc(Location loc) {
@@ -89,11 +89,11 @@ public class Map{
 				field.get(pacLoc).remove(Type.PACMAN);
 				field.get(pacLoc).add(Type.GHOST);
 
-				return gameOver = true;
+				return gameOver = false;
 			}
 		}
 
-		return false;
+		return true;
 	}
 
 	public JComponent eatCookie(String name) {
@@ -106,9 +106,10 @@ public class Map{
       this.field.get(pacmanLocation).remove(Map.Type.COOKIE);
       field.get(pacmanLocation).add(Type.EMPTY);
       this.cookies++;
-      return this.components.remove(cookieName);
+      return null;
     }
 
-		return null;
+    String cookieName = "tok_x" + pacmanLocation.x + "_y" + pacmanLocation.y;
+    return this.components.remove(cookieName);
 	}
 }

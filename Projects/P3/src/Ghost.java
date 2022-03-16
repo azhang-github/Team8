@@ -35,10 +35,10 @@ public class Ghost{
 		ArrayList<Location> moves = this.get_valid_moves();
 		int idx = (int) (Math.random() * moves.size());
 		if (moves.size() == 0 || !this.myMap.move(this.myName, moves.get(idx), Map.Type.GHOST))
-			return false;
+			return true;
 		this.shift = this.myLoc.unshift(moves.get(idx));
 		this.myLoc = moves.get(idx);
-		return true;
+		return false;
 	}
 
 	public boolean is_pacman_in_range() {
@@ -54,13 +54,15 @@ public class Ghost{
 
 	    for (Location location : locationSet) {
 	      if (this.myMap.getLoc(location).contains(Map.Type.PACMAN)) {
-		return true;
+          return false;
 	      }
 	    }
-	    return false;
+	    return true;
 	}
 
 	public boolean attack() {
-		return is_pacman_in_range() && myMap.attack(myName);
+    if (!is_pacman_in_range())
+        return myMap.attack(myName);
+    else return false;
 	}
 }
