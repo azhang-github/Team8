@@ -105,11 +105,10 @@ public class Map{
       this.locations.remove(cookieName);
       this.field.get(pacmanLocation).remove(Map.Type.COOKIE);
       field.get(pacmanLocation).add(Type.EMPTY);
-      this.cookies++;
-      return null;
+      this.cookies--;
+      return this.components.remove(cookieName);
     }
 
-    String cookieName = "tok_x" + pacmanLocation.x + "_y" + pacmanLocation.y;
-    return this.components.remove(cookieName);
+    return null;
 	}
 }
