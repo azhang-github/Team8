@@ -35,10 +35,10 @@ public class Ghost{
 		ArrayList<Location> moves = this.get_valid_moves();
 		int idx = (int) (Math.random() * moves.size());
 		if (moves.size() == 0 || !this.myMap.move(this.myName, moves.get(idx), Map.Type.GHOST))
-			return true;
+			return false;
 		this.shift = this.myLoc.unshift(moves.get(idx));
 		this.myLoc = moves.get(idx);
-		return false;
+		return true;
 	}
 
 	public boolean is_pacman_in_range() {
