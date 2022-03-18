@@ -54,10 +54,10 @@ public class Ghost{
 
 	    for (Location location : locationSet) {
 	      if (this.myMap.getLoc(location).contains(Map.Type.PACMAN)) {
-          return false;
+          	return true;
 	      }
 	    }
-	    return true;
+	    return false;
 	}
 
 	public boolean attack() {

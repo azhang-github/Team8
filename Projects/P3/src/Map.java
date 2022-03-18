@@ -89,11 +89,11 @@ public class Map{
 				field.get(pacLoc).remove(Type.PACMAN);
 				field.get(pacLoc).add(Type.GHOST);
 
-				return gameOver = false;
+				return gameOver = true;
 			}
 		}
 
-		return true;
+		return false;
 	}
 
 	public JComponent eatCookie(String name) {

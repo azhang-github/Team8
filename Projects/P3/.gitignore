@@ -1,2 +1,5 @@
 src/*.class
 tests/*.class
+P3.iml
+out/
+.idea/
