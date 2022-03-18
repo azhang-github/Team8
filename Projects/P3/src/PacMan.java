@@ -21,7 +21,7 @@ public class PacMan{
 			Location shiftedLoc = this.myLoc.shift(dir[0], dir[1]);
 			HashSet<Map.Type> newLocation = this.myMap.getLoc(shiftedLoc);
 
-			if(newLocation.contains(Map.Type.EMPTY) || newLocation.contains(Map.Type.COOKIE)) {
+			if (newLocation.contains(Map.Type.EMPTY) || newLocation.contains(Map.Type.COOKIE)) {
 				validMoves.add(shiftedLoc);
 			}
 		}
