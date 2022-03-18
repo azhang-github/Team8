@@ -27,7 +27,7 @@ public class TestPacManValidMoves extends TestCase {
 		for(int[] dir : directions) {
 			Location possibleLoc = pacman.myLoc.shift(dir[0], dir[1]);
 			if(!validMoves.contains(possibleLoc)) {
-				HashSet<Map.Type> types = new HashSet<>(Arrays.asList(Map.Type.EMPTY));
+				HashSet<Map.Type> types = map.getLoc(possibleLoc);
 				assertFalse(types.contains(Map.Type.EMPTY) || types.contains(Map.Type.COOKIE) || types.contains(Map.Type.GHOST));
 			}
 		}

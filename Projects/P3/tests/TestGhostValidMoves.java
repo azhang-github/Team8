@@ -24,7 +24,7 @@ public class TestGhostValidMoves extends TestCase {
 		for(int[] dir : directions) {
 			Location possibleLoc = ghost.myLoc.shift(dir[0], dir[1]);
 			if(!validMoves.contains(possibleLoc)) {
-				HashSet<Map.Type> types = new HashSet<Map.Type>(Arrays.asList(Map.Type.EMPTY));
+				HashSet<Map.Type> types = map.getLoc(possibleLoc);
 				assertFalse(types.contains(Map.Type.EMPTY) || types.contains(Map.Type.COOKIE) || types.contains(Map.Type.PACMAN) || types.contains(Map.Type.GHOST));
 			}
 		}

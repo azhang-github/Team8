@@ -26,7 +26,7 @@ public class Ghost{
 			| newLocation.contains(Map.Type.PACMAN)
 			| newLocation.contains(Map.Type.GHOST)) {
 				validMoves.add(shiftedLocation);
-			};
+			}
 		}
 		return validMoves;
 	}
