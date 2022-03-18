@@ -53,9 +53,9 @@ public class PacMan{
     HashSet typeSet = this.myMap.getLoc(this.myLoc);
 
     if (typeSet.contains(Map.Type.COOKIE)) {
-      return null;
+      return this.myMap.eatCookie(this.myName);
     }
 
-    return this.myMap.eatCookie(this.myName);
+    return null;
 	}
 }
