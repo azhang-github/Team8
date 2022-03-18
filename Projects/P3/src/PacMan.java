@@ -23,7 +23,7 @@ public class PacMan{
 
 			if(newLocation.contains(Map.Type.EMPTY)
 			| newLocation.contains(Map.Type.COOKIE)
-			) {
+			| newLocation.contains(Map.Type.GHOST)) {
 				validMoves.add(shiftedLoc);
 			}
 		}
